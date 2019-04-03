@@ -4,7 +4,11 @@
     <head>
         
         <title>{{title}}</title>
-        <link rel="stylesheet" href="style.css">
+        
+        <style>
+        .error{color: red;}
+        </style>
+        
 
     </head>
     <body>  
@@ -15,23 +19,32 @@
             <label>Username:
                 <input name="username" type="text" value="{{username}}" />
             </label>
-            <p class="error">{{username_error}}</p>
+            <span class="error">{{username_error}}</span>
+            <br>
+            <br>
     
             <label> Password:
                 <input name="password" type="password" value='{{password}}' />
             </label>
-            <p class="error">{{password_error}}</p>
+            <span class="error">{{password_error}}</span>
+            <br>
+            <br>
 
 
             <label> Verify Password:
                 <input name="verify_password" type="password" value='{{verify_password}}' />
             </label>
-            <p class="error">{{verify_password_error}}</p>
+            <span class="error">{{verify_password_error}}</span>
+            <br>
+            <br>
 
             <label> Email (optional):
                 <input name="email" type="text" value='{{email}}' />
             </label>
-            <p class="error">{{email_error}}</p>
+            <span class="error">{{email_error}}</span>
+            <br>
+            <br>
+
 
 
 

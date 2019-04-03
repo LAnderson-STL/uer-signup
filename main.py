@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 
-@app.route("/home")
+@app.route("/", methods = ['GET'])
 def index():
     return render_template('home_page.html')
 
@@ -36,7 +36,7 @@ def not_valid_email(input):
     else:
         return True
 
-@app.route("/home", methods=["POST"])
+@app.route("/", methods=["POST"])
 def validate():
     username = request.form["username"]
     password = request.form["password"]
@@ -89,12 +89,13 @@ def validate():
         username = username, 
         password=password,
         verify_password=verify_password,
-        email=email)   
+        email=email,
+        title="user signup")   
 
 @app.route("/welcome")
 def valid_info():
     new_user = request.args.get('new_user')
-    return render_template('welcome_page.html', name = new_user)
+    return render_template('welcome_page.html', name = new_user, title = "welcome")
 
 
 
