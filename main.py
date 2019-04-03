@@ -2,8 +2,6 @@ from flask import Flask, request, redirect, render_template
 import cgi
 import os 
 
-
-
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
@@ -48,7 +46,6 @@ def validate():
     verify_password_error = ""
     email_error = ""
     
-
     #username logic
     if contains_space(username) or not_correct_length(username):
         username_error = "Not a vaild username"
@@ -73,14 +70,6 @@ def validate():
         password = ""
         verify_password = ""
     
-
-        
-
-
-
-    
-
-
     if not username_error and not password_error and not verify_password_error and not email_error:
         new_user = username
         return redirect('/welcome?new_user={0}'.format(new_user))
@@ -100,9 +89,5 @@ def validate():
 def valid_info():
     new_user = request.args.get('new_user')
     return render_template('welcome_page.html', name = new_user, title = "welcome")
-
-
-
-
 
 app.run() 
