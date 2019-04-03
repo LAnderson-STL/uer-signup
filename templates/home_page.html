@@ -2,7 +2,10 @@
 <!doctype html>
 <html>
     <head>
+        
         <title>{{title}}</title>
+        <link rel="stylesheet" href="style.css">
+
     </head>
     <body>  
         
@@ -15,13 +18,13 @@
             <p class="error">{{username_error}}</p>
     
             <label> Password:
-                <input name="password" type="text" value='{{password}}' />
+                <input name="password" type="password" value='{{password}}' />
             </label>
-            <p class="error">{{password}}</p>
+            <p class="error">{{password_error}}</p>
 
 
             <label> Verify Password:
-                <input name="verify_password" type="text" value='{{verify_password}}' />
+                <input name="verify_password" type="password" value='{{verify_password}}' />
             </label>
             <p class="error">{{verify_password_error}}</p>
 
