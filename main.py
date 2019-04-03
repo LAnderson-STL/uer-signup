@@ -53,6 +53,8 @@ def validate():
     if contains_space(username) or not_correct_length(username):
         username_error = "Not a vaild username"
         username = username
+        password = ""
+        verify_password = ""
 
     #password logic
     if contains_space(password) or not_correct_length(password):
@@ -65,9 +67,11 @@ def validate():
         verify_password = ""
 
     #email logic:
-    if is_not_empty(email) and not_correct_length(email) or contains_space(email) or not_valid_email(email):
+    if is_not_empty(email) and (not_correct_length(email) or contains_space(email) or not_valid_email(email)):
         email_error = "Not a valid email"
         email = email
+        password = ""
+        verify_password = ""
     
 
         
